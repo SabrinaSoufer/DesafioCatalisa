@@ -15,7 +15,7 @@ body {
     display: flex;
     flex-direction: colum;
     height: 90vh;
-    justfy-content: space-between;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -47,4 +47,5 @@ body {
 
 .detalhes-container >li p{
     color:white
+    
 }
