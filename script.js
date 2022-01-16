@@ -21,7 +21,13 @@ traduzirCondicao = (data) => {
         return 'Não sei' ;
     } else if (data.status == 'alive') {
         return 'Sim' ;
-    } else (data.status == 'dead') {
+    } else {
         return 'Não. Está morto' ;
     }
+}
+
+pegarPersonagem1 = () =>{
+    let numeroAleatorio1 = gerarValorAleatorio();
+    let numeroAleatorio2 = gerarValorAleatorio();
+    let numeroAleatorio3 = gerarValorAleatorio();
 }
