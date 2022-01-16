@@ -16,63 +16,65 @@ gerarValorAleatorio = () => {
     return Math.floor(Math.random()* 671);
 }
 
-traduzirCondicao = ( data ) => {
-    if (data.status == 'unknown') {
-        return 'Não sei' ;
-    } else if (data.status == 'Alive') {
-        return 'Sim' ;
-    } else {
-        return 'Não. Está morto' ;
+
+traduzirCondicao  =  ( data )  =>  {
+    if ( data . status  ==  'unknown' ) {
+        return  'Não sei' ;
+    } else  if ( data . status  ==  'Alive' ) {
+        return  'Sim' ;
+    } else  {
+        return  'Não. Está morto' ;
     }
 }
+
 
 pegarPersonagem1 = () =>{
     let numeroAleatorio1 = gerarValorAleatorio();
     let numeroAleatorio2 = gerarValorAleatorio();
     let numeroAleatorio3 = gerarValorAleatorio();
 
-fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio1}` , {
-    method: 'get',
-    headers: {
-        Accept: 'application/json',
-        "Content-type": 'application/json'
-    }
-}).then((response) => response.json()).then((data) => {
-    imagem1.src = data.image;
-    imagem1.alt = data.name;
-    nomeDoPersonagem1.innerHTML = data.name;
-    especie1.innerHTML = data.species;
-    condicao1.innerHTML = traduzirCondicao (data);
-});
+    fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio1}`, {
+       method: 'GET',
+       headers: {
+           Accept: 'application/json',
+           "Content-type": 'application/json'
+         }
+       }).then((response) => response.json()).then((data) => {
+           imagem1.src = data.image;
+           imagem1.alt = data.name;
+           nomeDoPersonagem1.innerHTML = data.name;
+           especie1.innerHTML = data.species;
+           condicao1.innerHTML = traduzirCondicao (data);
+       });
 
-fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio2}` , {
-    method: 'get',
-    headers: {
-        Accept: 'application/json',
-        "Content-type": 'application/json'
-    }
-}).then((response) => response.json()).then((data) => {
-    imagem2.src = data.image;
-    imagem2.alt = data.name;
-    nomeDoPersonagem2.innerHTML = data.name;
-    especie2.innerHTML = data.species;
-    condicao2.innerHTML = traduzirCondicao (data);
-});
-
-fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio3}` , {
-    method: 'get',
-    headers: {
-        Accept: 'application/json',
-        "Content-type": 'application/json'
-    }
-}).then((response) => response.json()).then((data) => {
-    imagem3.src = data.image;
-    imagem3.alt = data.name;
-    nomeDoPersonagem3.innerHTML = data.name;
-    especie3.innerHTML = data.species;
-    condicao3.innerHTML = traduzirCondicao (data);
-});
-return
-
-}
-botao.onclick = pegarPersonagem1 
+       fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio2}`, {
+        method: 'GET',
+        headers: {
+            Accept: 'application/json',
+            "Content-type": 'application/json'
+          }
+        }).then((response) => response.json()).then((data) => {
+            imagem2.src = data.image;
+            imagem2.alt = data.name;
+            nomeDoPersonagem2.innerHTML = data.name;
+            especie2.innerHTML = data.species;
+            condicao2.innerHTML = traduzirCondicao(data);
+        });
+        fetch(`https://rickandmortyapi.com/api/character/${numeroAleatorio3}`, {
+            method: 'GET',
+            headers: {
+                Accept: 'application/json',
+                "Content-type": 'application/json'
+              }
+            }).then((response) => response.json()).then((data) => {
+                imagem3.src = data.image;
+                imagem3.alt = data.name;
+                nomeDoPersonagem3.innerHTML = data.name;
+                especie3.innerHTML = data.species;
+                condicao3.innerHTML = traduzirCondicao(data);
+            });
+       return 
+       
+    }      
+      
+botao.onclick = pegarPersonagem1; 

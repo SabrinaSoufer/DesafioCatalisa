@@ -13,13 +13,13 @@ body {
 
 .main-container {
     display: flex;
-    flex-direction: colum;
+    flex-direction: column;
     height: 90vh;
     justify-content: space-between;
     width: 100%;
 }
 
-.main-container-imagens {
+.main-container-images {
     display: flex;
     justify-content: space-between;
     width: 100%;
